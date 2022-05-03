@@ -1,8 +1,6 @@
 import json
 import sys
 
-file_name = ""
-
 #Function to print file information
 def read_file(file_name):
     fi = open(file_name)
