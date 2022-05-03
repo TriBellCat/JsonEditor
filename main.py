@@ -78,10 +78,8 @@ def main():
         print("2. Write to file")
         user_option = input()
 
-        if int(user_option) == 1:
-            read_file(file_name)
-        elif int(user_option) == 2:
-            write_file(file_name)
+        if int(user_option) == 1 or int(user_option) == 2:
+            append_extension(file_name, int(user_option))
         else:
             print("Invalid option!")
 
