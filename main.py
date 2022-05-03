@@ -6,7 +6,7 @@ def read_file(file_name):
     fi = open(file_name)
     with open(file_name, 'r') as fi:
         data = json.load(fi)
-    print(data)
+    print(json.dumps(data, sort_keys=True,indent=4))
     fi.close()
 
 #Function to write and create a file if it doesn't exist
@@ -43,7 +43,6 @@ def write_file(file_name):
 
 #Appends .json to file name if the user did not input it
 def append_extension(file_name, choice):
-    choice = 1
     string_fn = str(file_name)
     x = []
     sep = ""
@@ -55,6 +54,7 @@ def append_extension(file_name, choice):
         x.append("json")
     file_name = f"{string_fn}{sep.join(x)}"
 
+    print(choice)
     if int(choice) == 1:
         check_valid(file_name)
         read_file(file_name)
